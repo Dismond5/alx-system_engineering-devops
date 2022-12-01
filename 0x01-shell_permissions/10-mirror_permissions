@@ -1,0 +1,2 @@
+#!/bin/bash
+chmon --refference=olleh hello
