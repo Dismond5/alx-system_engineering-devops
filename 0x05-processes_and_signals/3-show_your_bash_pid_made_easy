@@ -1,4 +1,5 @@
-$!/usr/bin/env bash
+#!/usr/bin/env bash
 # This script displays the PID
-# cannot use p s
+# cannot use p 
+
 pgrep -l bash

@@ -3,4 +3,4 @@
 #shellcheck disable=SC2009
 #gerp - earch specific word
 
-ps -aufx | grep bash
+ps aux | grep bash
