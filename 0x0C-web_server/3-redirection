@@ -1,21 +1,5 @@
 #!/usr/bin/env bash
-# Configure your Nginx server so that /redirect_me is redirecting to another page.
-# The redirection is configured as a "301 Moved Permanently"
-
-apt-get update
-apt-get install -y nginx
-
-mkdir /etc/nginx/html
-touch /etc/nginx/html/index.html
-echo "Hello Word!" > /etc/nginx/html/index.html
-printf %s "server {
-    listen 80;
-    listen [::]:80 default_server;
-    root   /etc/nginx/html;
-    index  index.html index.htm;
-    location /redirect_me {
-        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
-    }
-}" > /etc/nginx/sites-available/default
-
-service nginx restart
+# This script is configureing your Nginx server so that /redirect_me is redirecting to another new_page="https://www.youtube.com/watch?v=QpIHg8dhBEE"
+file="/etc/nginx/sites-available/default"
+sudo sed -i "/listen 80 default_server/a rewrite ^/redirect_me $new_page permanent;" $file
+sudo service nginx restart
