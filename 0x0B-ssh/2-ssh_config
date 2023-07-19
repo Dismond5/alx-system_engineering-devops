@@ -1,4 +1,8 @@
-# ssh config file
-Host *
-      PasswordAuthentication no
-      IdentifyFile ~/.ssh/school
+#!/usr/bin/env bash
+# Client configuration file
+Host default
+ HostName 3.95.32.34
+  User ubuntu
+  Port 22
+  PasswordAuthentication no
+  IdentityFile ~/.ssh/school
