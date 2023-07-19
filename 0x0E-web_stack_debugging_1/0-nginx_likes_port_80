@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
-#configure nginx server to listen for port 80
-
-sudo  sed -i "s/8080/80/" /etc/nginx/sites-enabled/default
+# Setting up server to curl port 80 with no issues
+sudo apt-get update
+sudo apt-get -y install curl
+sudo apt-get -y install nginx
+sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo sed -i 's/listen 8080 default_server;.*/listen 80 default_server;/' /etc/nginx/sites-enabled/default
+sudo sed -i 's/listen \[::\]:8080 default_server ipv6only=on;.*/listen \[::\]:80 default_server;/' /etc/nginx/sites-enabled/default
 sudo service nginx restart
