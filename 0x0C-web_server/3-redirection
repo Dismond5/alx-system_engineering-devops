@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-# This script is configureing your Nginx server so that /redirect_me is redirecting to another new_page="https://www.youtube.com/watch?v=QpIHg8dhBEE"
+# This script is configureing your Nginx server so that /redirect_me is redirecting to another 
+sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+new_page="https://www.youtube.com/watch?v=QpIHg8dhBEE"
 file="/etc/nginx/sites-available/default"
 sudo sed -i "/listen 80 default_server/a rewrite ^/redirect_me $new_page permanent;" $file
 sudo service nginx restart
