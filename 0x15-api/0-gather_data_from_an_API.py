@@ -29,8 +29,8 @@ if __name__ == "__main__":
         if done_tasks['completed']:
             totalTasks += 1
 
-    print("Employee {} is done with tasks({}/{}):".
-          format(name, totalTasks, len(json_req)))
+    print("Employee {} is done with tasks({}/{}):"
+            .format(name, totalTasks, len(json_req)))
 
     for done_tasks in json_req:
         if done_tasks['completed']:
